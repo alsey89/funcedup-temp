@@ -19,22 +19,22 @@ services:
       timeout: 5s
       retries: 5
 
-  # client:
-  #   build:
-  #     context: ./client
-  #     args:
-  #       BUILD_ENV: ${BUILD_ENV:-production}
-  #   volumes:
-  #     - ./client:/app
-  #     - /app/node_modules
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     - BUILD_ENV=${BUILD_ENV:-production}
-  #   depends_on:
-  #     - postgres
-  #   networks:
-  #     - app-network
+  client:
+    build:
+      context: ./client
+      args:
+        BUILD_ENV: ${BUILD_ENV:-production}
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - BUILD_ENV=${BUILD_ENV:-production}
+    depends_on:
+      - postgres
+    networks:
+      - app-network
 
   server:
     build:
