@@ -14,14 +14,6 @@ type Post struct {
 	User *User `json:"user" gorm:"foreignKey:UserID"`
 }
 
-type User struct {
-	gorm.Model
-
-	Name         string `json:"name"`
-	Email        string `json:"email"`
-	PasswordHash string `json:"passwordHash"`
-}
-
 type PostTag struct {
 	gorm.Model
 	PostID uint `json:"postId"`
