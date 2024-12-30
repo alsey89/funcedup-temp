@@ -32,7 +32,13 @@ func main() {
 			m.ApplySchema(
 				true,
 				schema.User{},
-				schema.Post{},
+				schema.Content{},
+				schema.Discussion{},
+				schema.DiscusionReply{},
+				schema.Note{},
+				schema.NoteReply{},
+				schema.Tag{},
+				schema.ContentTag{},
 			)
 		}),
 		//* fx logs ---------------------------------------------------------------
